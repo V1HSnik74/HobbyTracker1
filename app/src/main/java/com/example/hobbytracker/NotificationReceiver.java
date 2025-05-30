@@ -38,7 +38,7 @@ public class NotificationReceiver extends BroadcastReceiver {
             NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID)
                     .setSmallIcon(R.drawable.app_icon)
                     .setContentTitle("Напоминание о хобби")
-                    .setContentText("Время позаниматься " + hobbyName + "!")
+                    .setContentText("Время позаниматься хобби: " + hobbyName + "!")
                     .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                     .setAutoCancel(true);
             Intent notifyIntent = new Intent(context, MainActivity.class);

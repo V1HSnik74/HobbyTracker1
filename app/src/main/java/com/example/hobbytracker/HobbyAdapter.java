@@ -11,10 +11,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.gson.Gson;
 
 import java.util.ArrayList;
-import java.util.List;
+
 
 public class HobbyAdapter extends RecyclerView.Adapter<HobbyAdapter.MyViewHolder> {
     Context context;
@@ -52,10 +51,10 @@ public class HobbyAdapter extends RecyclerView.Adapter<HobbyAdapter.MyViewHolder
             Intent intent = new Intent(context, hobby_details.class);
             intent.putExtra("hobbyName", item.getName());
             intent.putExtra("hobbyLogo",item.getImage());
-            Gson gson = new Gson();
+            /*Gson gson = new Gson();
             List<Task> tasks = item.getTasks();
             String tasksJson = gson.toJson(tasks);
-            intent.putExtra("hobbyTasks", tasksJson);
+            intent.putExtra("hobbyTasks", tasksJson);*/
             context.startActivity(intent);
         });
     }

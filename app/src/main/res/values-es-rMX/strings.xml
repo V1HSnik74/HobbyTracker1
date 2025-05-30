@@ -76,20 +76,4 @@
         <item>Creaste proyectos: </item>
         <item>Proyectos completos: </item>
     </string-array>
-    <string-array name="logrosSilver">
-        <item>El tiempo gastado: </item>
-        <item>Creaste hobbies: </item>
-        <item>Creaste objetivos: </item>
-        <item>Objetivos completos: </item>
-        <item>Creaste proyectos: </item>
-        <item>Proyectos completos: </item>
-    </string-array>
-    <string-array name="logrosGold">
-        <item>El tiempo gastado: </item>
-        <item>Creaste hobbies: </item>
-        <item>Creaste objetivos: </item>
-        <item>Objetivos completos: </item>
-        <item>Creaste proyectos: </item>
-        <item>Proyectos completos: </item>
-    </string-array>
 </resources>

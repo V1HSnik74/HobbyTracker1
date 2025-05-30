@@ -2,15 +2,13 @@ package com.example.hobbytracker;
 
 
 public class AchievementsData {
-    private final String title, bronzeDesc, silverDesc, goldDesc;
+    private final String title, descr;
     int currProgress, bronzeThreshold, silverThreshold, goldThreshold, currLevel;
     private boolean hasGotBronze, hasGotSilver, hasGotGold;
 
-    public AchievementsData(String title, String bronzeDesc, String silverDesc, String goldDesc, int currProgress, int bronzeThreshold, int silverThreshold, int goldThreshold, int currLevel) {
+    public AchievementsData(String title, String descr, int currProgress, int bronzeThreshold, int silverThreshold, int goldThreshold, int currLevel) {
         this.title = title;
-        this.bronzeDesc = bronzeDesc;
-        this.silverDesc = silverDesc;
-        this.goldDesc = goldDesc;
+        this.descr = descr;
         this.currProgress = currProgress;
         this.bronzeThreshold = bronzeThreshold;
         this.silverThreshold = silverThreshold;
@@ -64,11 +62,6 @@ public class AchievementsData {
         return Math.min(100, (currProgress * 100) / nextThreshold);
     }
 
-    public String getBronzeDesc() {
-        return bronzeDesc;
-    }
-
-
     public String getTitle() {
         return title;
     }
@@ -77,19 +70,8 @@ public class AchievementsData {
         return silverThreshold;
     }
 
-
-    public String getSilverDesc() {
-        return silverDesc;
-    }
-
-
     public int getGoldThreshold() {
         return goldThreshold;
-    }
-
-
-    public String getGoldDesc() {
-        return goldDesc;
     }
 
 
@@ -111,5 +93,9 @@ public class AchievementsData {
 
     public void setCurrLevel(int currLevel) {
         this.currLevel = currLevel;
+    }
+
+    public String getDescr() {
+        return descr;
     }
 }

@@ -114,21 +114,5 @@
         <item>Создано проектов: </item>
         <item>Выполнено проектов: </item>
     </string-array>
-    <string-array name="logrosSilver">
-        <item>Всего потрачено часов: </item>
-        <item>Создайте хобби: </item>
-        <item>Записано целей: </item>
-        <item>Выполнено целей: </item>
-        <item>Создано проектов: </item>
-        <item>Выполнено проектов: </item>
-    </string-array>
-    <string-array name="logrosGold">
-        <item>Всего потрачено часов: </item>
-        <item>Создайте хобби: </item>
-        <item>Записано целей: </item>
-        <item>Выполнено целей: </item>
-        <item>Создано проектов: </item>
-        <item>Выполнено проектов: </item>
-    </string-array>
     <string name="achievements">Достижения</string>
 </resources>

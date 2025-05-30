@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 
-import java.lang.reflect.Type;
+
 import java.util.ArrayList;
 
 
@@ -43,26 +43,22 @@ public class LogrosAdapter extends RecyclerView.Adapter<LogrosAdapter.LogrosView
     public void onBindViewHolder(@NonNull LogrosAdapter.LogrosViewHolder holder, int position) {
         AchievementsData achievement = logros.get(position);
         holder.logroName.setText(achievement.getTitle());
-        String descr;
+        String descr = achievement.getDescr();
         int threshold;
         holder.progress.setProgress(achievement.getProgressPercentage());
         if (achievement.getCurrLevel() < 1){
-            descr = achievement.getBronzeDesc();
             threshold = achievement.getBronzeThreshold();
             holder.medal.setImageResource(R.drawable.no_medal);
         }
         else if (achievement.getCurrLevel() == 1){
-            descr = achievement.getSilverDesc();
             threshold = achievement.getSilverThreshold();
             holder.medal.setImageResource(R.drawable.bronze);
         }
         else if (achievement.getCurrLevel() == 2){
-            descr = achievement.getGoldDesc();
             threshold = achievement.getGoldThreshold();
             holder.medal.setImageResource(R.drawable.silver);
         }
         else{
-            descr = achievement.getGoldDesc();
             threshold = achievement.getGoldThreshold();
             holder.medal.setImageResource(R.drawable.gold);
         }

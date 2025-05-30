@@ -58,15 +58,11 @@ public class AchievementsManager {
     private void initializeAchievements(){
         achievements = new ArrayList<>();
         String[] titles = context.getResources().getStringArray(R.array.logrosTitle);
-        String[] bronzeDesc = context.getResources().getStringArray(R.array.logrosBronze);
-        String[] silverDesc = context.getResources().getStringArray(R.array.logrosSilver);
-        String[] goldDesc = context.getResources().getStringArray(R.array.logrosGold);
+        String[] descr = context.getResources().getStringArray(R.array.logrosBronze);
         for (int i = 0; i < titles.length; i++){
             AchievementsData achievement = new AchievementsData(
                     titles[i],
-                    bronzeDesc[i],
-                    silverDesc[i],
-                    goldDesc[i],
+                    descr[i],
                     0,
                     thresholds[i][0],
                     thresholds[i][1],
@@ -101,15 +97,14 @@ public class AchievementsManager {
     }
 
     private int countTotalHobbies(){
+        int totalHobbies = 0;
         SharedPreferences prefs = context.getSharedPreferences("HobbiesData", Context.MODE_PRIVATE);
         Gson gson = new Gson();
         String json = prefs.getString("HobbyList", "");
-        if (json.isEmpty()){
-            return 0;
-        }
         Type type = new TypeToken<ArrayList<Hobby>>() {}.getType();
         ArrayList<Hobby> hobbies = gson.fromJson(json, type);
-        return hobbies != null ? hobbies.size() : 0;
+        if (hobbies != null) totalHobbies += hobbies.size();
+        return totalHobbies;
     }
 
     private int countTotalGoals(){
