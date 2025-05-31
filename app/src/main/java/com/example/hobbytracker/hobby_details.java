@@ -11,7 +11,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.FrameLayout;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.NumberPicker;
@@ -50,7 +49,8 @@ public class hobby_details extends AppCompatActivity implements ProjAdapter.onGo
     private TaskAdapter adapter;
     private ProjAdapter projAdapter;
     private IdeasAdapter ideasAdapter;
-    private String hobbyName, projName;
+    private String hobbyName;
+    String projName;
     int hobbyLogo;
     private Hobby currHobby;
     private Map<String, ArrayList<String>> mapData = new HashMap<>();
@@ -115,14 +115,18 @@ public class hobby_details extends AppCompatActivity implements ProjAdapter.onGo
 
         if (!allProjectLists.isEmpty()) {
             currProj = allProjectLists.get(currProjList);
-        } else {
-            currProj = new ProjectList(getString(R.string.project), new ArrayList<>());
-            allProjectLists.add(currProj);
+            loadGoals(currProj);
+            projName = currProj.getName();
+            goals = currProj.getProjects();
+            adjustArrowsVisibility();
+        }
+        else {
+            allProjectLists = new ArrayList<>();
+            currProj = null;
+            projName = "";
+            goals = new ArrayList<>();
             saveData("ProjectsData", allProjectLists);
         }
-        loadGoals(currProj);
-        projName = currProj.getName();
-        goals = currProj.getProjects();
 
         projAdapter = new ProjAdapter(this, allProjectLists, this, this);
         projRecyclerView.setAdapter(projAdapter);
@@ -130,10 +134,12 @@ public class hobby_details extends AppCompatActivity implements ProjAdapter.onGo
             @Override
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
-                currProjList = position;
-                currProj = allProjectLists.get(position);
-                projName = currProj.getName();
-                goals = currProj.getProjects();
+                if (position >= 0 && position < allProjectLists.size()){
+                    currProjList = position;
+                    currProj = allProjectLists.get(position);
+                    projName = currProj.getName();
+                    goals = currProj.getProjects();
+                }
             }
         });
 
@@ -194,7 +200,18 @@ public class hobby_details extends AppCompatActivity implements ProjAdapter.onGo
         projectInLayout.setVisibility(isTask? View.VISIBLE: View.INVISIBLE);
         rightArrow.setVisibility(isTask? View.INVISIBLE: View.VISIBLE);
         leftArrow.setVisibility(isTask? View.INVISIBLE: View.VISIBLE);
+        adjustArrowsVisibility();
+    }
 
+    private void adjustArrowsVisibility(){
+        if (allProjectLists.isEmpty() || allProjectLists.size() == 1){
+            rightArrow.setVisibility(View.GONE);
+            leftArrow.setVisibility(View.GONE);
+        }
+        else{
+            rightArrow.setVisibility(View.VISIBLE);
+            leftArrow.setVisibility(View.VISIBLE);
+        }
     }
 
     private void showCurrProj() {
@@ -205,8 +222,15 @@ public class hobby_details extends AppCompatActivity implements ProjAdapter.onGo
             if (projAdapter == null) {
                 projAdapter = new ProjAdapter(this, allProjectLists, this, this);
                 projRecyclerView.setAdapter(projAdapter);
+                adjustArrowsVisibility();
             }
+            projAdapter.notifyDataSetChanged();
             projRecyclerView.setCurrentItem(currProjList, true);
+        }
+        else {
+            projRecyclerView.setVisibility(View.GONE);
+            rightArrow.setVisibility(View.GONE);
+            leftArrow.setVisibility(View.GONE);
         }
     }
 
@@ -312,6 +336,7 @@ public class hobby_details extends AppCompatActivity implements ProjAdapter.onGo
                 goals = currProj.getProjects();
                 projAdapter.notifyDataSetChanged();
                 projRecyclerView.setCurrentItem(currProjList, true);
+                adjustArrowsVisibility();
             }
             else{
                 Toast.makeText(hobby_details.this, "Проект не может быть пустым", Toast.LENGTH_SHORT).show();
@@ -476,20 +501,32 @@ public class hobby_details extends AppCompatActivity implements ProjAdapter.onGo
 
     @SuppressLint("NotifyDataSetChanged")
     private void deleteProject(){
+        String deletedProject = allProjectLists.get(currProjList).getName();
         allProjectLists.remove(currProjList);
-        if (currProjList >= allProjectLists.size()){
-            currProjList = allProjectLists.size() - 1;
-        }
-        currProj = allProjectLists.get(currProjList);
-        projName = currProj.getName();
-        goals = currProj.getProjects();
-        saveData("ProjectsData", allProjectLists);
-        projAdapter.notifyDataSetChanged();
-        projRecyclerView.setCurrentItem(currProjList, true);
         SharedPreferences sharedPreferences = getSharedPreferences("GoalsData", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.remove("goals_" + projName);
+        editor.remove("goals_" + deletedProject);
         editor.apply();
+        if (allProjectLists.isEmpty()){
+            currProjList = -1;
+            currProj = null;
+            projName = "";
+            goals = new ArrayList<>();
+            adjustArrowsVisibility();
+            taskList.setVisibility(View.GONE);
+        }
+        else{
+            if (currProjList >= allProjectLists.size()){
+                currProjList = allProjectLists.size() - 1;
+            }
+            currProj = allProjectLists.get(currProjList);
+            projName = currProj.getName();
+            goals = currProj.getProjects();
+            adjustArrowsVisibility();
+        }
+        saveData("ProjectsData", allProjectLists);
+        if (projAdapter!=null) projAdapter.notifyDataSetChanged();
+        if (!allProjectLists.isEmpty()) projRecyclerView.setCurrentItem(currProjList, true);
     }
 
     @SuppressLint("NotifyDataSetChanged")
@@ -515,6 +552,7 @@ public class hobby_details extends AppCompatActivity implements ProjAdapter.onGo
         this.goals = goals;
         goals.remove(pos);
         adapter.notifyItemRemoved(pos);
+        if (pos < goals.size()) adapter.notifyItemRangeChanged(pos, goals.size() - pos);
         currProj.setProjects(goals);
         allProjectLists.set(currProjList, currProj);
         saveGoals(currProj);
