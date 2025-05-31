@@ -48,6 +48,7 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.ProjectV
                 if (listener!= null){
                     ProjectAdapter projectAdapter = new ProjectAdapter(projects, context, listener, listenerDelete);
                     listener.onGoalsChanged(projects, projectAdapter);
+                    AchievementsManager.getInstance(context).updateStatistics();
                 }
             });
         }));

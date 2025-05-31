@@ -2,7 +2,10 @@ package com.example.hobbytracker;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -34,9 +37,18 @@ public class AchievementsManager {
 
     private final Context context;
     private ArrayList<AchievementsData> achievements;
+    private static AchievementsManager instance;
+
 
     public AchievementsManager(Context context) {
         this.context = context;
+    }
+
+    public static synchronized AchievementsManager getInstance(Context context) {
+        if (instance == null) {
+            instance = new AchievementsManager(context);
+        }
+        return instance;
     }
 
     public void saveAchievements(){
@@ -74,6 +86,7 @@ public class AchievementsManager {
     }
 
     public void updateStatistics(){
+        if (achievements == null) loadAchievements();
         int totalHobbies = countTotalHobbies();
         int totalGoals = countTotalGoals();
         int completedGoals = countCompletedGoals();
@@ -210,8 +223,27 @@ public class AchievementsManager {
 
     private void checkAchievementLevel(AchievementsData achievement){
         int progress = achievement.getCurrProgress();
-        if (progress >= achievement.getGoldThreshold() && achievement.getCurrLevel() < goldLevel) achievement.setCurrLevel(goldLevel);
-        else if (progress >= achievement.getSilverThreshold() && achievement.getCurrLevel() < silverLevel) achievement.setCurrLevel(silverLevel);
-        else if (progress >= achievement.getBronzeThreshold() && achievement.getCurrLevel() < bronzeLevel) achievement.setCurrLevel(bronzeLevel);
+        if (progress >= achievement.getGoldThreshold() && achievement.getCurrLevel() < goldLevel){
+            achievement.setCurrLevel(goldLevel);
+            new Handler(Looper.getMainLooper()).post(() ->{
+                Toast toast = Toast.makeText(context, "Новое достижение!\n" + achievement.getTitle() + "\nЗолото!", Toast.LENGTH_LONG);
+                toast.show();
+            });
+        }
+        else if (progress >= achievement.getSilverThreshold() && achievement.getCurrLevel() < silverLevel) {
+            achievement.setCurrLevel(silverLevel);
+            new Handler(Looper.getMainLooper()).post(() ->{
+                Toast toast = Toast.makeText(context, "Новое достижение!\n" + achievement.getTitle() + "\nСеребро!", Toast.LENGTH_LONG);
+                toast.show();
+            });
+        }
+        else if (progress >= achievement.getBronzeThreshold() && achievement.getCurrLevel() < bronzeLevel) {
+            achievement.setCurrLevel(bronzeLevel);
+            new Handler(Looper.getMainLooper()).post(() ->{
+                Toast toast = Toast.makeText(context, "Новое достижение!\n" + achievement.getTitle() + "\nБронза!", Toast.LENGTH_LONG);
+                toast.show();
+            });
+        }
+
     }
 }

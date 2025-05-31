@@ -200,7 +200,7 @@ public class hobby_details extends AppCompatActivity implements ProjAdapter.onGo
         projectInLayout.setVisibility(isTask? View.VISIBLE: View.INVISIBLE);
         rightArrow.setVisibility(isTask? View.INVISIBLE: View.VISIBLE);
         leftArrow.setVisibility(isTask? View.INVISIBLE: View.VISIBLE);
-        adjustArrowsVisibility();
+        if (!isTask) adjustArrowsVisibility();
     }
 
     private void adjustArrowsVisibility(){
@@ -271,6 +271,7 @@ public class hobby_details extends AppCompatActivity implements ProjAdapter.onGo
                 tasks.add(newTask);
                 adapter.notifyDataSetChanged();
                 saveData("HobbyTasks", tasks);
+                AchievementsManager.getInstance(this).updateStatistics();
             }
             else{
                 Toast.makeText(hobby_details.this, "Задача не может быть пустой", Toast.LENGTH_SHORT).show();
@@ -337,6 +338,7 @@ public class hobby_details extends AppCompatActivity implements ProjAdapter.onGo
                 projAdapter.notifyDataSetChanged();
                 projRecyclerView.setCurrentItem(currProjList, true);
                 adjustArrowsVisibility();
+                AchievementsManager.getInstance(this).updateStatistics();
             }
             else{
                 Toast.makeText(hobby_details.this, "Проект не может быть пустым", Toast.LENGTH_SHORT).show();
@@ -386,6 +388,7 @@ public class hobby_details extends AppCompatActivity implements ProjAdapter.onGo
             updateDayInfo();
             updateWeekInfo();
             updateMonthInfo();
+            AchievementsManager.getInstance(this).updateStatistics();
             dialog.dismiss();
         });
         cancel.setOnClickListener(v -> dialog.dismiss());

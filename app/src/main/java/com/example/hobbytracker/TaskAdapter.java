@@ -47,6 +47,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
                 task.setCompleted(isChecked);
                 notifyItemChanged(position);
                 ((hobby_details) context).saveData("HobbyTasks", tasks);
+                AchievementsManager.getInstance(context).updateStatistics();
             });
         });
     }
