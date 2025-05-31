@@ -543,7 +543,7 @@ public class hobby_details extends AppCompatActivity implements ProjAdapter.onGo
     @Override
     public void onClickDelete(int position) {
         tasks.remove(position);
-        adapter.notifyItemRemoved(position);
+        adapter.notifyDataSetChanged();
         saveData("HobbyTasks", tasks);
     }
 
