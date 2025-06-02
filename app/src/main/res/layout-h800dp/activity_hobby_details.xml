@@ -46,7 +46,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="31dp"
-                    android:layout_marginTop="25dp"
+                    android:layout_marginTop="8dp"
                     app:srcCompat="@drawable/cactus_ico"
                     android:contentDescription="@string/ico"/>
 
@@ -55,7 +55,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:layout_marginStart="125dp"
-                    android:layout_marginTop="30dp">
+                    android:layout_marginTop="17dp">
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -78,7 +78,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="95dp"
+                    android:layout_marginTop="88dp"
                     app:srcCompat="@drawable/dots1"
                     android:contentDescription="@string/pattern"/>
 
@@ -93,19 +93,20 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/source_serif_pro_semibold"
                         android:text="@string/activity"
-                        android:textSize="32sp"/>
+                        android:textSize="24sp"/>
+
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/line_5"
-                        android:contentDescription="@string/line"/>
+                        android:contentDescription="@string/line"
+                        app:srcCompat="@drawable/line_5" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="25dp"
+                        android:layout_marginTop="20dp"
                         android:text="@string/activity_descr"
                         android:fontFamily="@font/source_serif_pro"
-                        android:textSize="20sp"/>
+                        android:textSize="18sp"/>
                 </LinearLayout>
 
             </FrameLayout>
@@ -114,7 +115,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:orientation="horizontal"
-                android:layout_marginTop="25dp">
+                android:layout_marginTop="20dp">
 
                 <FrameLayout
                     android:layout_width="wrap_content"
@@ -122,9 +123,9 @@
 
                     <ImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/total_1_"
-                        android:contentDescription="@string/activity_block"/>
+                        android:layout_height="match_parent"
+                        android:contentDescription="@string/activity_block"
+                        app:srcCompat="@drawable/total_1_" />
 
                     <TextView
                         android:id="@+id/wholeTimeInfo"
@@ -134,7 +135,8 @@
                         android:layout_marginTop="16dp"
                         android:fontFamily="@font/source_serif_pro_semibold"
                         android:text="@string/total_time"
-                        android:textSize="20sp" />
+                        android:textSize="18sp"
+                        android:lineSpacingMultiplier="1.5"/>
                 </FrameLayout>
 
                 <FrameLayout
@@ -156,7 +158,8 @@
                         android:layout_marginTop="16dp"
                         android:fontFamily="@font/source_serif_pro_semibold"
                         android:text="@string/month_activity"
-                        android:textSize="20sp" />
+                        android:lineSpacingMultiplier="1.5"
+                        android:textSize="18sp" />
                 </FrameLayout>
 
             </LinearLayout>
@@ -165,7 +168,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="10dp"
                 android:orientation="horizontal"
                 android:layout_marginTop="8dp">
 
@@ -187,7 +189,8 @@
                         android:layout_marginTop="16dp"
                         android:fontFamily="@font/source_serif_pro_semibold"
                         android:text="@string/week_activity"
-                        android:textSize="20sp" />
+                        android:lineSpacingMultiplier="1.5"
+                        android:textSize="18sp" />
                 </FrameLayout>
 
                 <FrameLayout
@@ -209,7 +212,8 @@
                         android:layout_marginTop="16dp"
                         android:fontFamily="@font/source_serif_pro_semibold"
                         android:text="@string/daily_activity"
-                        android:textSize="20sp" />
+                        android:lineSpacingMultiplier="1.5"
+                        android:textSize="18sp" />
                 </FrameLayout>
 
             </LinearLayout>
@@ -218,7 +222,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#ECE7E0"
-                android:layout_marginTop="5dp">
+                android:layout_marginTop="20dp">
 
                 <ImageView
                     android:id="@+id/addTime"
@@ -235,13 +239,13 @@
                     android:layout_gravity="center_horizontal|center_vertical"
                     android:fontFamily="@font/source_serif_pro_semibold"
                     android:text="@string/add_time"
-                    android:textSize="24sp"/>
+                    android:textSize="18sp"/>
             </FrameLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="70dp"
+                android:layout_marginTop="60dp"
                 android:background="#ECE7E0"
                 android:layout_marginStart="16dp"
                 android:orientation="vertical">
@@ -251,7 +255,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/source_serif_pro_semibold"
                     android:text="@string/planning"
-                    android:textSize="32sp" />
+                    android:textSize="24sp" />
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -262,17 +266,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/source_serif_pro"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:text="@string/planning_descr"
-                    android:layout_marginTop="25dp"/>
+                    android:layout_marginTop="20dp"/>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="25dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
                 android:orientation="horizontal">
 
                 <FrameLayout
@@ -298,7 +301,7 @@
                             android:layout_gravity="center_vertical|center_horizontal"
                             android:fontFamily="@font/source_serif_pro_semibold"
                             android:text="@string/tasks"
-                            android:textSize="24sp" />
+                            android:textSize="18sp" />
                     </FrameLayout>
 
                     <FrameLayout
@@ -320,7 +323,7 @@
                             android:layout_gravity="center_vertical|center_horizontal"
                             android:fontFamily="@font/source_serif_pro_semibold"
                             android:text="@string/tasks"
-                            android:textSize="24sp" />
+                            android:textSize="18sp" />
                     </FrameLayout>
                 </FrameLayout>
 
@@ -347,7 +350,7 @@
                             android:layout_gravity="center_vertical|center_horizontal"
                             android:fontFamily="@font/source_serif_pro_semibold"
                             android:text="@string/projects"
-                            android:textSize="24sp" />
+                            android:textSize="18sp" />
                     </FrameLayout>
 
                     <FrameLayout
@@ -369,7 +372,7 @@
                             android:layout_gravity="center_vertical|center_horizontal"
                             android:fontFamily="@font/source_serif_pro_semibold"
                             android:text="@string/projects"
-                            android:textSize="24sp" />
+                            android:textSize="18sp" />
                     </FrameLayout>
                 </FrameLayout>
             </LinearLayout>
@@ -378,7 +381,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="20dp">
+                android:layout_marginTop="20dp">
                 <ImageView
                     android:id="@+id/taskList"
                     android:layout_width="wrap_content"
@@ -389,7 +392,8 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/taskItems"
                     android:layout_width="370dp"
-                    android:layout_height="290dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_height="280dp"
                     android:contentDescription="@string/recycler"/>
 
                 <androidx.viewpager2.widget.ViewPager2
@@ -403,7 +407,7 @@
                     android:id="@+id/leftarrow"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="28dp"
+                    android:layout_marginStart="18dp"
                     android:layout_marginTop="34dp"
                     app:srcCompat="@drawable/leftarrow"
                     android:contentDescription="@string/left_arrow"/>
@@ -424,7 +428,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:background="#EAE5DE"
-                android:layout_marginBottom="20dp">
+                android:layout_marginTop="20dp">
 
                 <LinearLayout
                     android:id="@+id/projectbuttons"
@@ -451,7 +455,7 @@
                             android:layout_gravity="center_horizontal|center_vertical"
                             android:fontFamily="@font/source_serif_pro_semibold"
                             android:text="@string/add_proj"
-                            android:textSize="24sp" />
+                            android:textSize="18sp" />
                     </FrameLayout>
 
                     <ImageView
@@ -467,8 +471,7 @@
                 <FrameLayout
                     android:id="@+id/taskaddbutton"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="20dp">
+                    android:layout_height="wrap_content">
 
                     <ImageView
                         android:id="@+id/addTask"
@@ -483,13 +486,13 @@
                         android:layout_gravity="center_vertical|center_horizontal"
                         android:fontFamily="@font/source_serif_pro_semibold"
                         android:text="@string/add_task"
-                        android:textSize="24sp" />
+                        android:textSize="18sp" />
                 </FrameLayout>
             </FrameLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="60dp"
 
                 android:layout_marginStart="16dp"
                 android:background="#ECE7E0"
@@ -500,7 +503,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/source_serif_pro_semibold"
                     android:text="@string/ideas"
-                    android:textSize="32sp" />
+                    android:textSize="24sp" />
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -510,8 +513,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="25dp"
-                    android:textSize="20sp"
+                    android:layout_marginTop="20dp"
+                    android:textSize="18sp"
                     android:fontFamily="@font/source_serif_pro"
                     android:text="@string/url_descr"/>
             </LinearLayout>
@@ -519,7 +522,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="25dp">
+                android:layout_marginTop="20dp">
                 <ImageView
                     android:id="@+id/ideasList"
                     android:layout_width="wrap_content"
@@ -555,7 +558,7 @@
                     android:layout_gravity="center_vertical|center_horizontal"
                     android:fontFamily="@font/source_serif_pro_semibold"
                     android:text="@string/add_idea"
-                    android:textSize="24sp" />
+                    android:textSize="18sp" />
             </FrameLayout>
         </LinearLayout>
     </ScrollView>

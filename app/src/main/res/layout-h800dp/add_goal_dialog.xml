@@ -16,8 +16,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="36dp">
+        android:layout_gravity="center">
 
             <TextView
                 android:id="@+id/goalText"
@@ -39,11 +38,11 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp">
+            android:layout_marginTop="20dp">
             <EditText
                 android:id="@+id/goalName"
                 android:layout_width="315dp"
-                android:layout_height="51dp"
+                android:layout_height="wrap_content"
                 android:backgroundTint="#DEB3A3"
                 android:hint="@string/input_task"
                 android:inputType="text"
@@ -55,7 +54,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="40dp">
 
             <FrameLayout
                 android:layout_width="wrap_content"
@@ -73,7 +72,7 @@
                     android:layout_gravity="center_horizontal|center_vertical"
                     android:text="@string/cancel"
                     android:fontFamily="@font/source_serif_pro_semibold"
-                    android:textSize="22sp"
+                    android:textSize="16sp"
                     android:layout_marginEnd="5dp"/>
             </FrameLayout>
             <FrameLayout
@@ -91,7 +90,7 @@
                     android:layout_gravity="center_horizontal|center_vertical"
                     android:text="@string/ok"
                     android:fontFamily="@font/source_serif_pro_semibold"
-                    android:textSize="22sp"/>
+                    android:textSize="16sp"/>
             </FrameLayout>
 
 

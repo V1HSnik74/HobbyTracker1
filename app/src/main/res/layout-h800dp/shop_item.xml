@@ -4,7 +4,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:backgroundTint="#F0EBE4"
-    android:padding="8dp">
+    android:padding="6dp">
 
     <ImageView
         android:layout_width="wrap_content"
@@ -26,31 +26,31 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="173dp"
+        android:layout_marginTop="175dp"
         android:fontFamily="@font/source_serif_pro_semibold"
         android:text="@string/choose"
-        android:textSize="24sp"
-        android:visibility="gone" />
+        android:textSize="20sp"
+        android:visibility="gone"/>
 
     <LinearLayout
         android:id="@+id/price"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="168dp"
+        android:layout_marginTop="172dp"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="45dp"
             android:fontFamily="@font/source_serif_pro_semibold"
             android:text="@string/price"
-            android:textSize="32sp" />
+            android:textSize="24sp" />
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="5dp"
             android:contentDescription="@string/coin"
