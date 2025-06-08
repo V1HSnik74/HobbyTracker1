@@ -9,14 +9,15 @@
         android:id="@+id/imageView17"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:contentDescription="@string/list"
-        app:srcCompat="@drawable/add_link_overlay1" />
+        app:srcCompat="@drawable/add_link_overlay"
+        android:contentDescription="@string/list" />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_gravity="center">
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="36dp">
 
         <TextView
             android:id="@+id/ideaText"
@@ -25,7 +26,7 @@
             android:fontFamily="@font/source_serif_pro_semibold"
             android:text="@string/add_idea"
             android:textSize="32sp"
-            android:layout_gravity="center_horizontal"/>
+            android:layout_gravity="center_horizontal" />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -33,19 +34,12 @@
             android:layout_marginTop="7dp"
             android:src="@drawable/line_4"
             android:contentDescription="@string/line"
-            android:layout_gravity="center_horizontal"/>
+            android:layout_gravity="center_horizontal" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="24sp"
-                android:fontFamily="@font/source_serif_pro_semibold"
-                android:text="@string/url"/>
+            android:layout_marginTop="30dp">
 
             <EditText
                 android:id="@+id/link"
@@ -54,15 +48,17 @@
                 android:backgroundTint="#DEB3A3"
                 android:hint="@string/input_idea"
                 android:inputType="text"
-                android:autofillHints=""/>
+                android:autofillHints="" />
         </LinearLayout>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="24sp"
             android:fontFamily="@font/source_serif_pro_semibold"
             android:text="@string/descr"
-            android:layout_marginTop="30dp"/>
+            android:layout_marginTop="15dp" />
+
         <EditText
             android:id="@+id/descr_idea"
             android:layout_width="315dp"
@@ -70,7 +66,8 @@
             android:backgroundTint="#DEB3A3"
             android:hint="@string/descr_input"
             android:inputType="text"
-            android:autofillHints=""/>
+            android:autofillHints="" />
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -81,38 +78,43 @@
             <FrameLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
+
                 <ImageView
                     android:id="@+id/cancelIdea"
                     android:layout_width="132dp"
                     android:layout_height="47dp"
                     android:layout_marginEnd="8dp"
                     android:src="@drawable/cancel_add_time"
-                    android:contentDescription="@string/cancel_button"/>
+                    android:contentDescription="@string/cancel_button" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal|center_vertical"
                     android:text="@string/cancel"
                     android:fontFamily="@font/source_serif_pro_semibold"
-                    android:textSize="16sp"
-                    android:layout_marginEnd="5dp"/>
+                    android:textSize="22sp"
+                    android:layout_marginEnd="5dp" />
             </FrameLayout>
+
             <FrameLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
+
                 <ImageView
                     android:id="@+id/okIdea"
                     android:layout_width="134dp"
                     android:layout_height="47dp"
                     android:src="@drawable/ok_add_time"
-                    android:contentDescription="@string/ok_button"/>
+                    android:contentDescription="@string/ok_button" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal|center_vertical"
                     android:text="@string/ok"
                     android:fontFamily="@font/source_serif_pro_semibold"
-                    android:textSize="16sp"/>
+                    android:textSize="22sp" />
             </FrameLayout>
 
 

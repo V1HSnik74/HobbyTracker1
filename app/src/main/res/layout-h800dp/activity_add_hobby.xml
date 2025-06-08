@@ -7,14 +7,14 @@
     android:layout_height="match_parent"
     android:background="#EEE9E2"
     android:orientation="vertical"
-    tools:context=".add_hobby">
+    tools:context=".activities.AddHobbyActivity">
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_alignParentTop="true">
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -24,6 +24,7 @@
                 android:id="@+id/imageButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="55dp"
                 android:backgroundTint="#ECE7E0"
                 android:contentDescription="@string/back_button"
                 android:onClick="goToMainScreen"
@@ -34,24 +35,24 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="70dp"
+                android:layout_marginTop="120dp"
                 android:fontFamily="@font/source_serif_pro_semibold"
                 android:text="@string/new_hobby"
-                android:textSize="32sp" />
+                android:textSize="36sp" />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
-                android:layout_marginTop="7dp"
+                android:layout_marginTop="64dp"
                 android:contentDescription="@string/pattern"
                 app:srcCompat="@drawable/smth" />
 
             <ImageView
-                android:layout_width="189dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="115dp"
+                android:layout_marginTop="165dp"
                 android:contentDescription="@string/line"
                 app:srcCompat="@drawable/bar" />
 
@@ -60,6 +61,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:orientation="vertical">
 
             <TextView
@@ -69,7 +71,7 @@
                 android:layout_marginStart="16dp"
                 android:fontFamily="@font/source_serif_pro_semibold"
                 android:text="@string/input_hobby"
-                android:textSize="20sp" />
+                android:textSize="24sp" />
 
             <EditText
                 android:id="@+id/ourHobby"
@@ -88,23 +90,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="30dp"
             android:fontFamily="@font/source_serif_pro_semibold"
             android:text="@string/choose_new_ico"
-            android:textSize="20sp" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="30dp"
-            android:contentDescription="@string/line"
-            android:src="@drawable/line_6" />
+            android:textSize="24sp" />
 
         <ScrollView
             android:layout_width="wrap_content"
-            android:layout_height="198dp"
-            android:layout_gravity="center_horizontal">
+            android:layout_height="150dp"
+            android:layout_marginTop="16dp">
 
             <GridLayout
                 android:id="@+id/grid"
@@ -118,7 +112,7 @@
                     android:layout_height="wrap_content"
                     android:layout_row="0"
                     android:layout_column="0"
-                    android:layout_marginTop="16dp">
+                    android:layout_marginStart="16dp">
 
                     <ImageView
                         android:id="@+id/ico1"
@@ -142,8 +136,7 @@
                     android:layout_height="wrap_content"
                     android:layout_row="0"
                     android:layout_column="1"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp">
+                    android:layout_marginStart="16dp">
 
                     <ImageView
                         android:id="@+id/ico2"
@@ -167,8 +160,7 @@
                     android:layout_height="wrap_content"
                     android:layout_row="0"
                     android:layout_column="2"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp">
+                    android:layout_marginStart="16dp">
 
                     <ImageView
                         android:id="@+id/ico3"
@@ -192,8 +184,7 @@
                     android:layout_height="wrap_content"
                     android:layout_row="0"
                     android:layout_column="3"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp">
+                    android:layout_marginStart="16dp">
 
                     <ImageView
                         android:id="@+id/ico4"
@@ -218,7 +209,8 @@
                     android:layout_height="wrap_content"
                     android:layout_row="1"
                     android:layout_column="0"
-                    android:layout_marginTop="16dp">
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp">
 
                     <ImageView
                         android:id="@+id/ico5"
@@ -243,7 +235,7 @@
                     android:layout_row="1"
                     android:layout_column="1"
                     android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp">
+                    android:layout_marginTop="8dp">
 
                     <ImageView
                         android:id="@+id/ico6"
@@ -268,7 +260,7 @@
                     android:layout_row="1"
                     android:layout_column="2"
                     android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp">
+                    android:layout_marginTop="8dp">
 
                     <ImageView
                         android:id="@+id/ico7"
@@ -293,7 +285,7 @@
                     android:layout_row="1"
                     android:layout_column="3"
                     android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp">
+                    android:layout_marginTop="8dp">
 
                     <ImageView
                         android:id="@+id/ico8"
@@ -317,8 +309,8 @@
                     android:layout_height="wrap_content"
                     android:layout_row="2"
                     android:layout_column="0"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="16dp">
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp">
 
                     <ImageView
                         android:id="@+id/ico9"
@@ -338,20 +330,13 @@
             </GridLayout>
         </ScrollView>
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:contentDescription="@string/line"
-            android:src="@drawable/line_6" />
-
 
         <FrameLayout
             android:id="@+id/button_submit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="40dp">
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center_horizontal">
 
             <ImageView
                 android:id="@+id/submit"
@@ -368,7 +353,7 @@
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:fontFamily="@font/source_serif_pro_semibold"
                 android:text="@string/create_hobby"
-                android:textSize="18sp" />
+                android:textSize="24sp" />
         </FrameLayout>
     </LinearLayout>
 
@@ -407,7 +392,7 @@
             app:srcCompat="@drawable/grey_main" />
 
         <ImageView
-            android:id="@+id/logrosBut"
+            android:id="@+id/achievementsBut"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"

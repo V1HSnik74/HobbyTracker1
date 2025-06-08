@@ -21,6 +21,7 @@
     <string name="my_hobbies">Mis hobbies</string>
     <string name="input_task">Escribe el objetivo</string>
     <string name="input_project">Escribe el nombre del proyecto</string>
+    <string name="no_projects_message">Aún no tienes proyectos. Añadir el primero!</string>
     <string name="ok">OK</string>
     <string name="cancel">Atras</string>
     <string name="hours">h</string>
@@ -51,7 +52,6 @@
     <string name="activity_descr">Agrega la cantidad de tiempo que has gastado hoy en tu hobby!</string>
     <string name="planning_descr">Agrega los objetivos y crea los proyectos para los objetivos globales!</string>
     <string name="url_descr">Guarda tus urls!</string>
-    <string name="url">Link</string>
     <string-array name="quotes">
         <item>Crea hasta si da miedo!</item>
         <item>Tu hobby es tu superpoder!</item>
@@ -61,7 +61,7 @@
         <item>La practica es tu aliada!</item>
         <item>Eres genial!</item>
     </string-array>
-    <string-array name="logrosTitle">
+    <string-array name="achievementsTitle">
         <item>Maestro del tiempo</item>
         <item>Hobby-maniac</item>
         <item>Coleccionista de objetivos</item>
@@ -69,7 +69,23 @@
         <item>Coleccionista de proyectos</item>
         <item>Master of projects</item>
     </string-array>
-    <string-array name="logrosBronze">
+    <string-array name="achievementsBronze">
+        <item>El tiempo gastado: </item>
+        <item>Creaste hobbies: </item>
+        <item>Creaste objetivos: </item>
+        <item>Objetivos completos: </item>
+        <item>Creaste proyectos: </item>
+        <item>Proyectos completos: </item>
+    </string-array>
+    <string-array name="achievementsSilver">
+        <item>El tiempo gastado: </item>
+        <item>Creaste hobbies: </item>
+        <item>Creaste objetivos: </item>
+        <item>Objetivos completos: </item>
+        <item>Creaste proyectos: </item>
+        <item>Proyectos completos: </item>
+    </string-array>
+    <string-array name="achievementsGold">
         <item>El tiempo gastado: </item>
         <item>Creaste hobbies: </item>
         <item>Creaste objetivos: </item>

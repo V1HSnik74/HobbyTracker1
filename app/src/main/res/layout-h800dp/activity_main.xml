@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="#EEE9E2"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".activities.MainActivity">
 
 
     <FrameLayout
@@ -20,43 +20,42 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="27dp"
+            android:layout_marginTop="65dp"
             android:fontFamily="@font/source_serif_pro_semibold"
             android:text="@string/my_hobbies"
-            android:textSize="32sp" />
+            android:textSize="36sp" />
 
         <ImageView
             android:id="@+id/imageView3"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/pattern"
-            app:srcCompat="@drawable/left_dots1" />
+            android:layout_height="190dp"
+            app:srcCompat="@drawable/smth1"
+            android:contentDescription="@string/pattern" />
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="190dp"
             android:layout_gravity="end"
-            android:contentDescription="@string/pattern"
-            app:srcCompat="@drawable/right_dots1" />
+            app:srcCompat="@drawable/smth11"
+            android:contentDescription="@string/pattern" />
 
         <ImageView
             android:id="@+id/imageView4"
-            android:layout_width="163dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="80dp"
-            android:contentDescription="@string/line"
-            app:srcCompat="@drawable/bar" />
+            android:layout_marginTop="115dp"
+            app:srcCompat="@drawable/bar"
+            android:contentDescription="@string/line" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal|bottom"
+            android:src="@drawable/line_6"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="146dp"
             android:layout_marginEnd="10dp"
-            android:contentDescription="@string/line"
-            android:src="@drawable/line_6" />
+            android:layout_gravity="center_horizontal|bottom"
+            android:contentDescription="@string/line" />
     </FrameLayout>
 
     <FrameLayout
@@ -86,14 +85,14 @@
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:layout_gravity="center_horizontal"
-            android:contentDescription="@string/line"/>
+            android:contentDescription="@string/line" />
+
         <ImageView
             android:id="@+id/addHobby"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
-            android:layout_marginBottom="15dp"
-            android:layout_marginEnd="15dp"
+            android:layout_marginTop="20dp"
             android:backgroundTint="#00ECE7E0"
             android:contentDescription="@string/add_hobby"
             android:onClick="GoToAddHobby"
@@ -101,34 +100,30 @@
 
         <ImageView
             android:id="@+id/mascot"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="74dp"
-            android:contentDescription="@string/mascot"
-            android:src="@drawable/mascott" />
-        <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="165dp"
-            android:layout_marginTop="15dp">
-            <ImageView
-                android:id="@+id/bubble"
-                android:layout_width="188dp"
-                android:layout_height="100dp"
-                android:src="@drawable/bubble"
-                android:contentDescription="@string/bubble"/>
+            android:layout_marginStart="42dp"
+            android:layout_marginTop="100dp"
+            android:contentDescription="@string/mascot"
+            android:src="@drawable/mascott" />
 
-            <TextView
-                android:id="@+id/bubbleText"
-                android:layout_width="140dp"
-                android:layout_height="47dp"
-                android:layout_marginTop="18dp"
-                android:layout_gravity="center_horizontal"
-                android:fontFamily="@font/source_serif_pro_semibold"
-                android:textSize="18sp" />
-        </FrameLayout>
+        <ImageView
+            android:id="@+id/bubble"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/bubble"
+            android:layout_marginStart="150dp"
+            android:contentDescription="@string/bubble" />
 
+        <TextView
+            android:id="@+id/bubbleText"
+            android:layout_width="170dp"
+            android:layout_height="60dp"
+            android:textSize="20sp"
+            android:fontFamily="@font/source_serif_pro_semibold"
+            android:layout_marginStart="170dp"
+            android:layout_marginTop="30dp" />
 
     </FrameLayout>
 
@@ -144,7 +139,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/bottom_panel"
-            android:contentDescription="@string/panel"/>
+            android:contentDescription="@string/panel" />
 
         <ImageView
             android:id="@+id/shop"
@@ -153,25 +148,25 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="12dp"
             app:srcCompat="@drawable/shop"
-            android:contentDescription="@string/shop"/>
+            android:contentDescription="@string/shop" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="12dp"
-            android:contentDescription="@string/home_button"
-            app:srcCompat="@drawable/home" />
+            app:srcCompat="@drawable/house_main_pink"
+            android:contentDescription="@string/home_button" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/logros"
+            android:id="@+id/achievements"
             android:layout_gravity="end"
             android:layout_marginTop="12dp"
             android:layout_marginEnd="20dp"
             app:srcCompat="@drawable/profile"
-            android:contentDescription="@string/achievements_button"/>
+            android:contentDescription="@string/achievements_button" />
     </FrameLayout>
 
 

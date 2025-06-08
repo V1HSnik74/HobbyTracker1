@@ -37,6 +37,7 @@
     <string name="right_arrow" translatable="false">right_arrow</string>
     <string name="add_proj_button" translatable="false">add_project</string>
     <string name="del_proj_button" translatable="false">delete_project</string>
+    <string name="no_projects_message">У вас ещё нет проектов. Добавьте первый!</string>
     <string name="add_proj">Добавить проект</string>
     <string name="add_task_button" translatable="false">add_task</string>
     <string name="add_task">Добавить задачу</string>
@@ -59,7 +60,7 @@
     <string name="project">Проект</string>
     <string name="delete_proj">Удалить проект?</string>
     <string name="ideas">Ссылки и идеи</string>
-    <string name="add_idea">Добавить идею</string>
+    <string name="add_idea">Добавить ссылку</string>
     <string name="input_idea">Вставьте ссылку</string>
     <string name="descr">Описание</string>
     <string name="descr_input">Описания еще нет…</string>
@@ -89,7 +90,6 @@
     <string name="activity_descr">Добавляй время занятия, которое ты уделил сегодня на хобби!</string>
     <string name="planning_descr">Добавляй мелкие задачи и создавай проекты для более крупных целей!</string>
     <string name="url_descr">Сохраняй ссылки для реализации идей в будущем!</string>
-    <string name="url">Ссылка на идею</string>
     <string-array name="quotes">
         <item>Твори, даже если страшно!</item>
         <item>Твое хобби — твоя суперсила!</item>
@@ -99,7 +99,7 @@
         <item>Практика — твой союзник!</item>
         <item>Ты — молодец!</item>
     </string-array>
-    <string-array name="logrosTitle">
+    <string-array name="achievementsTitle">
         <item>Мастер времени</item>
         <item>Хобби-маньяк</item>
         <item>Коллекционер задач</item>
@@ -107,7 +107,23 @@
         <item>Коллекционер проектов</item>
         <item>Властелин проектов</item>
     </string-array>
-    <string-array name="logrosBronze">
+    <string-array name="achievementsBronze">
+        <item>Всего потрачено часов: </item>
+        <item>Создайте хобби: </item>
+        <item>Записано целей: </item>
+        <item>Выполнено целей: </item>
+        <item>Создано проектов: </item>
+        <item>Выполнено проектов: </item>
+    </string-array>
+    <string-array name="achievementsSilver">
+        <item>Всего потрачено часов: </item>
+        <item>Создайте хобби: </item>
+        <item>Записано целей: </item>
+        <item>Выполнено целей: </item>
+        <item>Создано проектов: </item>
+        <item>Выполнено проектов: </item>
+    </string-array>
+    <string-array name="achievementsGold">
         <item>Всего потрачено часов: </item>
         <item>Создайте хобби: </item>
         <item>Записано целей: </item>
@@ -116,4 +132,6 @@
         <item>Выполнено проектов: </item>
     </string-array>
     <string name="achievements">Достижения</string>
+    <string name="no_hobby_tasks_message">Нет задач для хобби</string>
+    <string name="no_ideas_message">Сохранённых ссылок пока нет</string>
 </resources>

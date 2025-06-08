@@ -18,40 +18,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HobbyTracker">
         <activity
-            android:name=".Shop"
-            android:exported="false" />
-
-        <receiver
-            android:name=".NotificationReceiver"
-            android:enabled="true"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <action android:name="android.intent.action.TIME_SET" />
-                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
-                <action android:name="android.app.action.SCHEDULE_EXACT_ALARM_PERMISSION_STATE_CHANGED" />
-            </intent-filter>
-        </receiver>
-        <receiver
-            android:name=".BootReceiver"
-            android:enabled="true"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-            </intent-filter>
-        </receiver>
-
-        <activity
-            android:name=".achievements"
+            android:name=".activities.Shop"
             android:exported="false" />
         <activity
-            android:name=".hobby_details"
+            android:name=".activities.AchievementsActivity"
             android:exported="false" />
         <activity
-            android:name=".add_hobby"
+            android:name=".activities.HobbyDetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.AddHobbyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

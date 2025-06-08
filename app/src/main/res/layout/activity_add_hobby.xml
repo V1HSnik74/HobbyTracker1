@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="#EEE9E2"
     android:orientation="vertical"
-    tools:context=".add_hobby">
+    tools:context=".activities.AddHobbyActivity">
 
 
     <LinearLayout
@@ -389,7 +389,7 @@
             app:srcCompat="@drawable/grey_main" />
 
         <ImageView
-            android:id="@+id/logrosBut"
+            android:id="@+id/achievementsBut"
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:layout_gravity="end"
