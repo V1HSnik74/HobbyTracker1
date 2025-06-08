@@ -188,6 +188,7 @@ public class MainActivity extends AppCompatActivity implements OnRecyclerViewAct
 
         // CHOOSING MASCOT
         if (requestCode == 2 && resultCode == RESULT_OK) {
+
             int mascotImage = data.getIntExtra("Mascot", -1);
             if (mascotImage != -1) {
                 ImageView mascot = findViewById(R.id.mascot);
@@ -227,7 +228,7 @@ public class MainActivity extends AppCompatActivity implements OnRecyclerViewAct
         NotificationSettings settings =
                 db.notificationSettingsDao().getNotificationsForHobby(currentHobby.base.id);
 
-        // HOBBY HASN'T SETTINGS
+        // HOBBY DOESN'T HAVE SETTINGS
         if (settings == null) {
             settings = new NotificationSettings();
             settings.hobbyId = currentHobby.base.id;

@@ -60,7 +60,7 @@
     <string name="project">Проект</string>
     <string name="delete_proj">Удалить проект?</string>
     <string name="ideas">Ссылки и идеи</string>
-    <string name="add_idea">Добавить ссылку</string>
+    <string name="add_idea">Добавить идею</string>
     <string name="input_idea">Вставьте ссылку</string>
     <string name="descr">Описание</string>
     <string name="descr_input">Описания еще нет…</string>
@@ -90,6 +90,7 @@
     <string name="activity_descr">Добавляй время занятия, которое ты уделил сегодня на хобби!</string>
     <string name="planning_descr">Добавляй мелкие задачи и создавай проекты для более крупных целей!</string>
     <string name="url_descr">Сохраняй ссылки для реализации идей в будущем!</string>
+    <string name="url">Ссылка на идею</string>
     <string-array name="quotes">
         <item>Твори, даже если страшно!</item>
         <item>Твое хобби — твоя суперсила!</item>

@@ -16,6 +16,7 @@ import com.example.hobbytracker.R;
 import com.example.hobbytracker.listeners.OnTaskDeleteListener;
 import com.example.hobbytracker.data.db.AppDatabase;
 import com.example.hobbytracker.data.model.Task;
+import com.example.hobbytracker.managers.AchievementsManager;
 
 import java.util.List;
 
@@ -60,6 +61,7 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.TaskViewHold
                 task.isDone = isChecked;
                 notifyItemChanged(position);
                 db.taskDao().update(task);
+                AchievementsManager.getInstance(context).updateStatistics();
             });
         });
     }

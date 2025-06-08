@@ -33,6 +33,7 @@ import com.example.hobbytracker.adapters.ProjectsAdapter;
 import com.example.hobbytracker.R;
 import com.example.hobbytracker.adapters.TasksAdapter;
 import com.example.hobbytracker.listeners.OnTaskDeleteListener;
+import com.example.hobbytracker.managers.AchievementsManager;
 import com.example.hobbytracker.models.TimeUtils;
 import com.example.hobbytracker.data.db.AppDatabase;
 import com.example.hobbytracker.data.model.DetailedHobby;
@@ -118,7 +119,6 @@ public class HobbyDetailsActivity extends AppCompatActivity
         currentHobby = db.hobbyDao().getDetailedHobby(hobbyId);
 
         if (currentHobby == null) {
-            Log.e("HobbyDetailsActivity", "Hobby not found for id = " + hobbyId);
             Toast.makeText(this, "Хобби не найдено", Toast.LENGTH_SHORT).show();
             finish();
             return;
@@ -143,13 +143,13 @@ public class HobbyDetailsActivity extends AppCompatActivity
         ideasRecyclerView.setAdapter(ideasAdapter);
 
         // PROJECTS ADAPTER
-        projectsAdapter = new ProjectsAdapter(projects, this);
+        projectsAdapter = new ProjectsAdapter(projects, this, this);
         projectsRecyclerView.setAdapter(projectsAdapter);
         projectsRecyclerView.registerOnPageChangeCallback(
                 new ViewPager2.OnPageChangeCallback() {
                     @Override
                     public void onPageSelected(int position) {
-                        if (!projects.isEmpty() && position >= 0 && position < projects.size()) {
+                        if (position >= 0 && position < projects.size()) {
                             currentProject = projects.get(position);
                             projectName = currentProject.base.name;
                             projectTasks = currentProject.tasks;
@@ -211,8 +211,19 @@ public class HobbyDetailsActivity extends AppCompatActivity
         projectInLayout.setVisibility(isTask ? View.VISIBLE : View.INVISIBLE);
         rightArrow.setVisibility(isTask ? View.INVISIBLE : View.VISIBLE);
         leftArrow.setVisibility(isTask ? View.INVISIBLE : View.VISIBLE);
-
+        if (!isTask) adjustArrowsVisibility();
         updateEmptyMessages(isTask);
+    }
+
+    private void adjustArrowsVisibility(){
+        if (projects.isEmpty() || projects.size() == 1){
+            rightArrow.setVisibility(View.GONE);
+            leftArrow.setVisibility(View.GONE);
+        }
+        else{
+            rightArrow.setVisibility(View.VISIBLE);
+            leftArrow.setVisibility(View.VISIBLE);
+        }
     }
 
     private void showCurrentProject() {
@@ -223,8 +234,9 @@ public class HobbyDetailsActivity extends AppCompatActivity
             projectTasks = currentProject.tasks;
 
             if (projectsAdapter == null) {
-                projectsAdapter = new ProjectsAdapter(projects, this);
+                projectsAdapter = new ProjectsAdapter(projects, this, this);
                 projectsRecyclerView.setAdapter(projectsAdapter);
+                adjustArrowsVisibility();
             }
 
             projectsRecyclerView.setCurrentItem(currentProjectIndex, true);
@@ -281,6 +293,7 @@ public class HobbyDetailsActivity extends AppCompatActivity
                 newTask.id = db.taskDao().insert(newTask);
 
                 refreshCurrentHobbyData();
+                AchievementsManager.getInstance(this).updateStatistics();
                 updateEmptyMessages(true);
 
             } else {
@@ -386,6 +399,7 @@ public class HobbyDetailsActivity extends AppCompatActivity
             currentHobby.timeEntries.add(timeEntry);
 
             updateTimeStatistics();
+            AchievementsManager.getInstance(this).updateStatistics();
 
             dialog.dismiss();
         });
@@ -525,10 +539,12 @@ public class HobbyDetailsActivity extends AppCompatActivity
                 newProjectBase.id = db.projectDao().insert(newProjectBase);
 
                 refreshCurrentHobbyData();
+                AchievementsManager.getInstance(this).updateStatistics();
                 updateEmptyMessages(false);
 
                 currentProjectIndex = projects.size() - 1;
                 projectsRecyclerView.setCurrentItem(currentProjectIndex, true);
+                adjustArrowsVisibility();
             } else {
                 Toast.makeText(
                         HobbyDetailsActivity.this,
@@ -544,7 +560,9 @@ public class HobbyDetailsActivity extends AppCompatActivity
 
     @SuppressLint("NotifyDataSetChanged")
     private void deleteProject() {
-        if (currentProject == null) {
+        if (currentProject == null)
+        {
+            adjustArrowsVisibility();
             Toast.makeText(
                     this,
                     "Нет выбранного проекта для удаления",
@@ -556,6 +574,7 @@ public class HobbyDetailsActivity extends AppCompatActivity
         if (currentProject != null && currentProject.tasks != null) {
             for (Task task : currentProject.tasks) {
                 task.status = "archived";
+                adjustArrowsVisibility();
                 db.taskDao().update(task);
             }
         }

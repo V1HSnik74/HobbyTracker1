@@ -5,6 +5,9 @@ public class AchievementsData {
     private final String title, bronzeDesc, silverDesc, goldDesc;
     int currProgress, bronzeThreshold, silverThreshold, goldThreshold, currLevel;
     private boolean hasGotBronze, hasGotSilver, hasGotGold;
+    private boolean bronzeToastShown = false;
+    private boolean silverToastShown = false;
+    private boolean goldToastShown = false;
 
     public AchievementsData(String title, String bronzeDesc, String silverDesc, String goldDesc, int currProgress, int bronzeThreshold, int silverThreshold, int goldThreshold, int currLevel) {
         this.title = title;
@@ -19,6 +22,42 @@ public class AchievementsData {
         hasGotBronze = false;
         hasGotSilver = false;
         hasGotGold = false;
+    }
+
+    public void setBronzeThreshold(int bronzeThreshold) {
+        this.bronzeThreshold = bronzeThreshold;
+    }
+
+    public boolean isBronzeToastShown() {
+        return bronzeToastShown;
+    }
+
+    public void setBronzeToastShown(boolean bronzeToastShown) {
+        this.bronzeToastShown = bronzeToastShown;
+    }
+
+    public void setGoldThreshold(int goldThreshold) {
+        this.goldThreshold = goldThreshold;
+    }
+
+    public boolean isGoldToastShown() {
+        return goldToastShown;
+    }
+
+    public void setGoldToastShown(boolean goldToastShown) {
+        this.goldToastShown = goldToastShown;
+    }
+
+    public void setSilverThreshold(int silverThreshold) {
+        this.silverThreshold = silverThreshold;
+    }
+
+    public boolean isSilverToastShown() {
+        return silverToastShown;
+    }
+
+    public void setSilverToastShown(boolean silverToastShown) {
+        this.silverToastShown = silverToastShown;
     }
 
     public boolean isHasGotBronze() {

@@ -25,10 +25,12 @@ import java.util.List;
 public class ProjectsAdapter extends RecyclerView.Adapter<ProjectsAdapter.ProjectViewHolder> {
     private List<ProjectWithTasks> projects;
     private final OnTaskChangedListener taskChangedListener;
+    private final Context context;
 
-    public ProjectsAdapter(List<ProjectWithTasks> projects, OnTaskChangedListener listener) {
+    public ProjectsAdapter(List<ProjectWithTasks> projects, OnTaskChangedListener listener, Context context) {
         this.projects = projects;
         this.taskChangedListener = listener;
+        this.context = context;
     }
 
     public void setProjects(List<ProjectWithTasks> newProjects) {
@@ -48,7 +50,7 @@ public class ProjectsAdapter extends RecyclerView.Adapter<ProjectsAdapter.Projec
         ProjectWithTasks project = projects.get(position);
         holder.projectName.setText(project.base.name);
 
-        ProjectTasksAdapter tasksAdapter = new ProjectTasksAdapter(project.tasks, taskChangedListener);
+        ProjectTasksAdapter tasksAdapter = new ProjectTasksAdapter(project.tasks, taskChangedListener, context);
         holder.tasksRecycler.setAdapter(tasksAdapter);
         holder.tasksRecycler.setLayoutManager(new LinearLayoutManager(holder.itemView.getContext()));
 

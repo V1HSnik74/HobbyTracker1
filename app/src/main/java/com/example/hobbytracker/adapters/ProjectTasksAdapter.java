@@ -1,5 +1,6 @@
 package com.example.hobbytracker.adapters;
 
+import android.content.Context;
 import android.graphics.Paint;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.hobbytracker.R;
 import com.example.hobbytracker.data.model.Task;
 import com.example.hobbytracker.listeners.OnTaskChangedListener;
+import com.example.hobbytracker.managers.AchievementsManager;
 
 import java.util.List;
 
@@ -20,10 +22,12 @@ import java.util.List;
 public class ProjectTasksAdapter extends RecyclerView.Adapter<ProjectTasksAdapter.TaskViewHolder> {
     private List<Task> tasks;
     private final OnTaskChangedListener taskChangedListener;
+    private final Context context;
 
-    public ProjectTasksAdapter(List<Task> tasks, OnTaskChangedListener taskChangedListener) {
+    public ProjectTasksAdapter(List<Task> tasks, OnTaskChangedListener taskChangedListener, Context context) {
         this.tasks = tasks;
         this.taskChangedListener = taskChangedListener;
+        this.context = context;
     }
 
     public void setTasks(List<Task> newTasks) {
@@ -53,6 +57,7 @@ public class ProjectTasksAdapter extends RecyclerView.Adapter<ProjectTasksAdapte
         holder.checkBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
             task.isDone = isChecked;
             if (taskChangedListener != null) taskChangedListener.onTaskCheckedChanged(task);
+            AchievementsManager.getInstance(context).updateStatistics();
         });
 
         ImageView deleteButton = holder.itemView.findViewById(R.id.deleteProjectTask);

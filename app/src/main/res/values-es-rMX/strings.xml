@@ -52,6 +52,7 @@
     <string name="activity_descr">Agrega la cantidad de tiempo que has gastado hoy en tu hobby!</string>
     <string name="planning_descr">Agrega los objetivos y crea los proyectos para los objetivos globales!</string>
     <string name="url_descr">Guarda tus urls!</string>
+    <string name="url">link</string>
     <string-array name="quotes">
         <item>Crea hasta si da miedo!</item>
         <item>Tu hobby es tu superpoder!</item>

@@ -20,42 +20,43 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="65dp"
+            android:layout_marginTop="27dp"
             android:fontFamily="@font/source_serif_pro_semibold"
             android:text="@string/my_hobbies"
-            android:textSize="36sp" />
+            android:textSize="32sp" />
 
         <ImageView
             android:id="@+id/imageView3"
             android:layout_width="wrap_content"
-            android:layout_height="190dp"
-            app:srcCompat="@drawable/smth1"
-            android:contentDescription="@string/pattern" />
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/pattern"
+            app:srcCompat="@drawable/left_dots" />
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="190dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="end"
-            app:srcCompat="@drawable/smth11"
-            android:contentDescription="@string/pattern" />
+            android:contentDescription="@string/pattern"
+            app:srcCompat="@drawable/right_dots" />
 
         <ImageView
             android:id="@+id/imageView4"
-            android:layout_width="wrap_content"
+            android:layout_width="163dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="115dp"
-            app:srcCompat="@drawable/bar"
-            android:contentDescription="@string/line" />
+            android:layout_marginTop="70dp"
+            android:contentDescription="@string/line"
+            app:srcCompat="@drawable/bar" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/line_6"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
             android:layout_gravity="center_horizontal|bottom"
-            android:contentDescription="@string/line" />
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="146dp"
+            android:layout_marginEnd="10dp"
+            android:contentDescription="@string/line"
+            android:src="@drawable/line_6" />
     </FrameLayout>
 
     <FrameLayout
@@ -85,14 +86,14 @@
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:layout_gravity="center_horizontal"
-            android:contentDescription="@string/line" />
-
+            android:contentDescription="@string/line"/>
         <ImageView
             android:id="@+id/addHobby"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
-            android:layout_marginTop="20dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginEnd="15dp"
             android:backgroundTint="#00ECE7E0"
             android:contentDescription="@string/add_hobby"
             android:onClick="GoToAddHobby"
@@ -100,30 +101,34 @@
 
         <ImageView
             android:id="@+id/mascot"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="42dp"
-            android:layout_marginTop="100dp"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="74dp"
             android:contentDescription="@string/mascot"
             android:src="@drawable/mascott" />
-
-        <ImageView
-            android:id="@+id/bubble"
+        <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:src="@drawable/bubble"
-            android:layout_marginStart="150dp"
-            android:contentDescription="@string/bubble" />
+            android:layout_marginStart="165dp"
+            android:layout_marginTop="15dp">
+            <ImageView
+                android:id="@+id/bubble"
+                android:layout_width="188dp"
+                android:layout_height="100dp"
+                android:src="@drawable/bubble"
+                android:contentDescription="@string/bubble"/>
 
-        <TextView
-            android:id="@+id/bubbleText"
-            android:layout_width="170dp"
-            android:layout_height="60dp"
-            android:textSize="20sp"
-            android:fontFamily="@font/source_serif_pro_semibold"
-            android:layout_marginStart="170dp"
-            android:layout_marginTop="30dp" />
+            <TextView
+                android:id="@+id/bubbleText"
+                android:layout_width="140dp"
+                android:layout_height="47dp"
+                android:layout_marginTop="18dp"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/source_serif_pro_semibold"
+                android:textSize="18sp" />
+        </FrameLayout>
+
 
     </FrameLayout>
 
@@ -139,7 +144,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/bottom_panel"
-            android:contentDescription="@string/panel" />
+            android:contentDescription="@string/panel"/>
 
         <ImageView
             android:id="@+id/shop"
@@ -148,15 +153,15 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="12dp"
             app:srcCompat="@drawable/shop"
-            android:contentDescription="@string/shop" />
+            android:contentDescription="@string/shop"/>
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="12dp"
-            app:srcCompat="@drawable/house_main_pink"
-            android:contentDescription="@string/home_button" />
+            android:contentDescription="@string/home_button"
+            app:srcCompat="@drawable/home" />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -166,7 +171,7 @@
             android:layout_marginTop="12dp"
             android:layout_marginEnd="20dp"
             app:srcCompat="@drawable/profile"
-            android:contentDescription="@string/achievements_button" />
+            android:contentDescription="@string/achievements_button"/>
     </FrameLayout>
 
 
