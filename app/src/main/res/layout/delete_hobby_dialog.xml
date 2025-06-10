@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/source_serif_pro_semibold"
-            android:text="@string/delete_proj"
+            android:text="@string/delete_hobby"
             android:textAlignment="center"
             android:textSize="32sp" />
 
@@ -36,7 +36,7 @@
             android:layout_marginTop="20dp"
             android:fontFamily="@font/source_serif_pro"
             android:lineSpacingMultiplier="0.9"
-            android:text="@string/delete_proj_descr"
+            android:text="@string/delete_hobby_descr"
             android:textSize="18sp" />
 
         <LinearLayout
@@ -51,7 +51,7 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/cancelProjDel"
+                    android:id="@+id/cancelDel"
                     android:layout_width="132dp"
                     android:layout_height="47dp"
                     android:layout_marginEnd="8dp"
@@ -73,7 +73,7 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/okProjDel"
+                    android:id="@+id/okDel"
                     android:layout_width="134dp"
                     android:layout_height="47dp"
                     android:contentDescription="@string/ok_button"

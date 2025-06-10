@@ -80,26 +80,26 @@ public class HobbyAdapter extends RecyclerView.Adapter<HobbyAdapter.MyViewHolder
         ImageView imageView;
         TextView textView;
         ImageView notifications;
+        ImageView deleteHobbyButton;
 
         public MyViewHolder(@NonNull View itemView, OnRecyclerViewActionListener listener, OnNotificationsListener notificationsListener) {
             super(itemView);
             imageView = itemView.findViewById(R.id.logo);
             textView = itemView.findViewById(R.id.hobbyname);
             notifications = itemView.findViewById(R.id.notifications);
+            deleteHobbyButton = itemView.findViewById(R.id.delete_hobby_button);
 
-            itemView.setOnLongClickListener(new View.OnLongClickListener() {
+            deleteHobbyButton.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public boolean onLongClick(View v) {
-                    if (listener != null) {
+                public void onClick(View v) {
+                    if (listener != null){
                         int pos = getAdapterPosition();
-                        if (pos != RecyclerView.NO_POSITION) {
-                            listener.OnItemLongClick(pos);
-                            return true;
-                        }
+                        if (pos != RecyclerView.NO_POSITION)
+                            listener.OnItemDeleteClickHobby(pos);
                     }
-                    return false;
                 }
             });
+
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

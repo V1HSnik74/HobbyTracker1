@@ -91,6 +91,9 @@
     <string name="planning_descr">Добавляй мелкие задачи и создавай проекты для более крупных целей!</string>
     <string name="url_descr">Сохраняй ссылки для реализации идей в будущем!</string>
     <string name="url">Ссылка на идею</string>
+    <string name="delete">Удалить</string>
+    <string name="delete_hobby">Удалить хобби?</string>
+    <string name="delete_hobby_descr">Содержимое данного хобби будет удалено без возможности восстановления.</string>
     <string-array name="quotes">
         <item>Твори, даже если страшно!</item>
         <item>Твое хобби — твоя суперсила!</item>

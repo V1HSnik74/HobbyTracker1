@@ -199,6 +199,48 @@ public class MainActivity extends AppCompatActivity implements OnRecyclerViewAct
         }
     }
 
+    public void showDeleteHobbyDialog(int position){
+        View dialogView = getLayoutInflater().inflate(R.layout.delete_hobby_dialog, null);
+        ImageView delete = dialogView.findViewById(R.id.okDel);
+        ImageView cancel = dialogView.findViewById(R.id.cancelDel);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setView(dialogView);
+        AlertDialog dialog = builder.create();
+        if (dialog.getWindow() != null) {
+            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        }
+        delete.setOnClickListener(v -> {
+            Hobby hobby = hobbiesList.get(position).base;
+            long hobbyId = hobby.id;
+
+            // Cancel all notifications for this hobby
+            NotificationScheduler.cancelAllNotificationsForHobby(this, hobbyId);
+
+            // Archive all projects for this hobby
+            db.projectDao().archiveAllHobbyProjects(hobbyId);
+
+            // Archive all tasks in those projects
+            db.taskDao().archiveAllProjectTasksByHobbyId(hobbyId);
+
+            // Archive all hobby tasks (not in projects)
+            db.taskDao().archiveAllHobbyTasksByHobbyId(hobbyId);
+
+            // Archive all ideas for this hobby
+            db.ideaDao().archiveAllByHobbyId(hobbyId);
+
+            // Archive the hobby itself
+            hobby.status = "archived";
+            db.hobbyDao().update(hobby);
+
+            Toast.makeText(this, "Хобби удалено!", Toast.LENGTH_SHORT).show();
+            refreshHobbiesList();
+            dialog.dismiss();
+        });
+        cancel.setOnClickListener(v -> dialog.dismiss());
+        dialog.show();
+    }
+
     public void showAddNotificationDialog(int position) {
         currHobbyPos = position;
         List<Integer> selectedDays = new ArrayList<>();
@@ -254,6 +296,10 @@ public class MainActivity extends AppCompatActivity implements OnRecyclerViewAct
 
         // FINAL NOTIFICATION SETTINGS
         NotificationSettings finalSettings = settings;
+
+        if (dialog.getWindow() != null) {
+            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        }
 
         // SAVE CHANGES
         ok.setOnClickListener(v -> {
@@ -356,31 +402,8 @@ public class MainActivity extends AppCompatActivity implements OnRecyclerViewAct
     }
 
     @Override
-    public void OnItemLongClick(int position) {
-        Hobby hobby = hobbiesList.get(position).base;
-        long hobbyId = hobby.id;
-
-        // Cancel all notifications for this hobby
-        NotificationScheduler.cancelAllNotificationsForHobby(this, hobbyId);
-
-        // Archive all projects for this hobby
-        db.projectDao().archiveAllHobbyProjects(hobbyId);
-
-        // Archive all tasks in those projects
-        db.taskDao().archiveAllProjectTasksByHobbyId(hobbyId);
-
-        // Archive all hobby tasks (not in projects)
-        db.taskDao().archiveAllHobbyTasksByHobbyId(hobbyId);
-
-        // Archive all ideas for this hobby
-        db.ideaDao().archiveAllByHobbyId(hobbyId);
-
-        // Archive the hobby itself
-        hobby.status = "archived";
-        db.hobbyDao().update(hobby);
-
-        Toast.makeText(this, "Хобби удалено!", Toast.LENGTH_SHORT).show();
-        refreshHobbiesList();
+    public void OnItemDeleteClickHobby(int position) {
+        showDeleteHobbyDialog(position);
     }
 
     @Override

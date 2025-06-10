@@ -87,7 +87,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:fontFamily="@font/source_serif_pro_semibold"
-                android:text="@string/ok"
+                android:text="@string/delete"
                 android:textSize="22sp" />
         </FrameLayout>
     </LinearLayout>

@@ -53,6 +53,9 @@
     <string name="planning_descr">Agrega los objetivos y crea los proyectos para los objetivos globales!</string>
     <string name="url_descr">Guarda tus urls!</string>
     <string name="url">link</string>
+    <string name="delete">Eliminar</string>
+    <string name="delete_hobby">Eliminar el hobby?</string>
+    <string name="delete_hobby_descr">Todo el contenido de hobby será eliminado sin posibilidad de recuperacion.</string>
     <string-array name="quotes">
         <item>Crea hasta si da miedo!</item>
         <item>Tu hobby es tu superpoder!</item>
