@@ -33,12 +33,12 @@ public class AchievementsManager {
     private static final int masterOfProjects = 5;
 
     private static final int[][] thresholds = {
-            {10, 30, 50},
-            {1, 2, 3},
-            {1, 2, 3},
-            {1, 2, 3},
-            {1, 2, 3},
-            {1, 2, 3},
+            {5, 20, 50},
+            {1, 3, 5},
+            {3, 20, 50},
+            {1, 20, 40},
+            {1, 5, 15},
+            {1, 3, 10},
     };
 
     private final Context context;

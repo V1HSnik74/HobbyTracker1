@@ -37,7 +37,7 @@
     <string name="right_arrow" translatable="false">right_arrow</string>
     <string name="add_proj_button" translatable="false">add_project</string>
     <string name="del_proj_button" translatable="false">delete_project</string>
-    <string name="no_projects_message">У вас ещё нет проектов. Добавьте первый!</string>
+    <string name="no_projects_message">Еще нет проектов</string>
     <string name="add_proj">Добавить проект</string>
     <string name="add_task_button" translatable="false">add_task</string>
     <string name="add_task">Добавить задачу</string>
@@ -136,6 +136,6 @@
         <item>Выполнено проектов: </item>
     </string-array>
     <string name="achievements">Достижения</string>
-    <string name="no_hobby_tasks_message">Нет задач для хобби</string>
-    <string name="no_ideas_message">Сохранённых ссылок пока нет</string>
+    <string name="no_hobby_tasks_message" translatable="false">Еще нет задач</string>
+    <string name="no_ideas_message" translatable="false">Еще нет идей</string>
 </resources>

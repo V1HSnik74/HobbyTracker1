@@ -59,7 +59,7 @@ public class HobbyDetailsActivity extends AppCompatActivity
     private ImageView rightArrow, leftArrow;
     ImageView taskButtonIn, projectsButtonIn, addTask, addProj, deleteProject, addIdea;
     private FrameLayout taskLayout, projectLayout, taskInLayout, projectInLayout, taskButtonsLayout;
-    private LinearLayout projectButtonsLayout;
+    private LinearLayout projectButtonsLayout, noTasks, noProjects, noIdeas;
     private TasksAdapter tasksAdapter;
     private ProjectsAdapter projectsAdapter;
     private IdeasAdapter ideasAdapter;
@@ -408,9 +408,9 @@ public class HobbyDetailsActivity extends AppCompatActivity
     }
 
     private void updateEmptyMessages(boolean isTask) {
-        TextView emptyProjectMessage = findViewById(R.id.emptyProjectMessage);
-        TextView emptyHobbyTasksMessage = findViewById(R.id.emptyHobbyTasksMessage);
-        TextView emptyIdeasMessage = findViewById(R.id.emptyIdeasMessage);
+        LinearLayout emptyProjectMessage = findViewById(R.id.no_projects);
+        LinearLayout emptyHobbyTasksMessage = findViewById(R.id.no_tasks);
+        LinearLayout emptyIdeasMessage = findViewById(R.id.no_ideas);
 
         if (isTask) {
             // Show hobby tasks message if hobbyTasks is empty, hide project message
